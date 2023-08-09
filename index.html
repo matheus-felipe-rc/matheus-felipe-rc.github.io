@@ -1,1 +1,485 @@
-Primeiro commit
+<!DOCTYPE html>
+<html lang="pt-br"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Guia do mochileiro Minecraft</title>
+
+    <!-- Principal CSS do Bootstrap -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos customizados para esse template -->
+    <link href="navbar-top-fixed.css" rel="stylesheet">
+  <style type="text/css" id="operaUserStyle"></style></head>
+  
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <!--<a class="navbar-brand" href="#">Navbar fixo</a>-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(atual)</span></a>
+          </li>-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              VirtualBox
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#Requisitos para operação">Requisitos para operação</a>
+              <a class="dropdown-item" href="#Sistema Debian">Sistema Debian</a>
+              <a class="dropdown-item" href="#Organizar máquinas">Organizar máquinas</a>
+              <a class="dropdown-item" href="#Criando .sh">Criando .sh</a>
+              <a class="dropdown-item" href="#Configurar Serviços">Configurar Serviços</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Console Amazon
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#Arquitetura">Arquitetura</a>
+              <a class="dropdown-item" href="#Criar Máquinas">Criar Máquinas</a>
+              <a class="dropdown-item" href="#Conectar a Máquina">Conectar a Máquina</a>
+              <a class="dropdown-item" href="#Gerenciando na nuvem">Gerenciando na nuvem</a>
+              <a class="dropdown-item" href="#Grupo de segurança">Grupo de segurança</a>
+              <a class="dropdown-item" href="#Grupo destino load balancer">Grupo destino e load balancer</a>
+              <a class="dropdown-item" href="#AMI Launch template">AMI Launch template</a>
+              <a class="dropdown-item" href="#Auto-Scale">Auto-Scale</a>
+            </div>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Terraform
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#Terraform">Terraform</a>
+              <a class="dropdown-item" href="#Cabeçalho">Cabeçalho</a>
+              <a class="dropdown-item" href="#Par de chaves">Par de chaves</a>
+              <a class="dropdown-item" href="#Grupo de segurança2">Terraform Grupo de segurança</a>
+              <a class="dropdown-item" href="#Modelo">Modelo de lançamento</a>
+              <a class="dropdown-item" href="#Target Group">Grupo destino</a>
+              <a class="dropdown-item" href="#Load balancer">Balanceador de carga</a>
+              <a class="dropdown-item" href="#Listener">Ouvinte</a>
+              <a class="dropdown-item" href="#Autoscale">Escalonamento automatico</a>
+              <a class="dropdown-item" href="#Código completo">Código completo</a>
+            </div>
+          </li>
+
+        </ul>
+        <!--<form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Pesquisa" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>-->
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Requisitos para operação">Requisitos para operação</h1>
+        <p class="lead" style="text-align: justify;">Para começar a instalação do primeiro procedimento para efetuar esta prática começamos em uma máquina virtual local utilizando do VirtualBox, software para virtualização que atualmente é da <a href="https://www.virtualbox.org">Oracle</a>.
+          Esta primeira configuração foi feita em um computador que possui um processador Intel® Core™ i3-8100 será usado dele um dos seus quatro núcleos de frequência 3,6 ghz (três vírgula seis gigahertz), alocando 1 gb (um gigabyte) de memória ram e 8 gb (oito gigabytes) de espaço em disco para fazer essa montagem localmente segue imagens:
+          </p>
+        <!--<P class="lead" style="text-align: center;">uhdsaifhasdifuhasdifuhausidfhaiuhf</P>-->
+        <img src="Figura 1 Virtualbox.png" alt="HTML5 Icon" style="align-content: center;"><!-- style="width:128px;height:128px;" -->
+        <!--<p class="lead">iuafsdhiudhfiadushfgiahdfiuahdsfgiuhasdigfubasdcifgujbadsfiughb</p>
+        <h1>Exemplo de navbar</h1>-->
+        <p class="lead"></p>
+        <p  style="text-align: center">
+        <img src="Figura 2 Virtualbox.png" alt="HTML5 Icon" style="align-content: center;"><!-- style="width:128px;height:128px;" -->
+        </p>
+        <p class="lead"></p>
+        <p  style="text-align: center">
+        <img src="Figura 3 Virtualbox.png" alt="HTML5 Icon" style="align-content: center;"><!-- style="width:128px;height:128px;" -->
+        </p>
+        <p class="lead"></p>
+        <p  style="text-align: center">
+        <img src="Figura 4 Virtualbox.png" alt="HTML5 Icon" style="align-content: center;"><!-- style="width:128px;height:128px;" -->
+        </p>
+        <p class="lead"></p>
+        <p class="lead" style="text-align: justify;">Em resumo as configurações mostradas anteriormente são para as máquinas que serão montadas localmente, elas são aproximadas às que encontramos nas máquinas que serão montadas na AWS (Amazon Web services), que serão montadas com especificações um pouco diferentes. Usaremos como base as máquinas T2.micro e T2.small.</p>
+        <p class="lead" style="text-align: justify;">Foi utilizado do disco virtual do sistema operacional <a href="https://www.debian.org/download">Debian</a> (debian-11.6.0-amd64-netinst.iso) em sua décima primeira versão para computadores de 64bits adquirido pelo próprio website do distribuidor do sistema operacional</p>
+
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Sistema Debian">Sistema Debian</h1>
+        <p class="lead" style="text-align: justify;">Inicie uma máquina com o disco do sistema Debian que foi escolhido anteriormente, qualquer outro sistema com base em linux deve funcionar para esta prática, ou se não, deve haver formas semelhantes de fazer o mesmo processo. Quando se deparar com a imagem a seguir selecione a segunda opção, após isso selecione idioma e modelo de teclado preferível para o qual o sistema vai ser usado, então aguarde alguns minutos.</p>
+        <p class="lead"></p>
+        <p  style="text-align: center">
+        <img src="Figura 1 Sistema Debian.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead"></p>
+        <p class="lead" style="text-align: justify;">Ao chegar a tela que pode ser vista na imagem a seguir deixe os asteriscos (*) que representa o que está selecionado exatamente como na imagem, utilize da “barra de espaço” e teclas de setas do seu teclado para fazer a alteração.</p>
+        <p  style="text-align: center">
+        <img src="Figura 2 Sistema Debian.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Após a instalação e se deparar com a tela de login do sistema, coloque o seu nome de usuário que foi adicionado anteriormente e sua senha, ambos foram atribuídos no processo de instalação do sistema, após isso o sistema vai estar pronto, esse processo foi feito para que você que está lendo agora se familiarize um pouco com o que vai ser trabalhado durante a montagem do sistema por dentro e repassando alguns comandos que estão presentes no processo.
+        </p>
+        <p  style="text-align: center">
+        <img src="Figura 3 Sistema Debian.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Estando agora dentro do sistema Debian, anote os seguintes comandos <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo su”</a>, este comando faz entrar na categoria de usuário de maior permissão, faça uso dele dentro da máquina virtual criada e coloque a sua senha escolhida durante a instalação para completar o comando, agora faça a atualização do sistema para checar se está tudo na versão mais recente do sistema com <a style="font-family: 'Courier New'; font-weight: bold ;">“apt-get update”</a>, para então instalar o git e o java na máquina para fazer uso do minecraft, com os seguintes comandos respectivamente, <a style="font-family: 'Courier New'; font-weight: bold ;">“apt-get install git”</a> para o git e manter um backup fácil acesso do servidor e <a style="font-family: 'Courier New'; font-weight: bold ;">“apt-get install openjdk-17-jdk”</a> para instalação do java na máquina, espere a finalização das instalações para continuar, terminando feche e faça um clone da máquina para evitar de ter de passar por todo este processo novamente, já que vai consumir mais tempo que a clonagem da máquina.
+        </p>
+        <!-- <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">Ver documentação »</a> -->
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Organizar máquinas">Organizar máquinas</h1>
+        <p class="lead" style="text-align: justify;">Este passo é para fazer uma logística na qual fique simples de entender o que cada máquina irá fazer quando tudo estiver pronto, após a conclusão da clonagem do ponto acima completar renomeie as máquinas de modo que seja possível que você possa distinguir qual será a máquina que vai fazer a manutenção das demais, inicie a primeira máquina, dentro dela você pode utilizar do comando “hostname” com um nome para alterar o nome da máquina por dentro do sistema caso também ache necessário, este comando vai necessitar de autorização de super usuário, então digite <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo hostnamectl set-hostname <a style="font-family: 'Courier New'; font-weight: bold ; font-style: italic;">nome”</a></a>. Adquira os arquivos do “multipaper”, o projeto open source para efetuar o “fork” (bifurcação) no processo principal do jogo Minecraft para então conseguir realizar sincronização entre as máquinas</p>
+        <p class="lead" style="text-align: justify;">Utilize o comando: <a style="font-family: 'Courier New'; font-weight: bold ;">wget <a href="https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/MultiPaper-Master-2.10.1-all.jar">https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/MultiPaper-Master-2.10.1-all.jar</a></a></p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Organizar.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Aguarde o término do download nesse tempo pode iniciar a máquina clone, faça o mesmo procedimento alterando o nome da máquina para melhor compreensão e fazendo download do arquivo para o servidor alterando o comando para:</p>
+        <p class="lead" style="text-align: justify;"><a style="font-family: 'Courier New'; font-weight: bold ;"> wget <a href="https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar">https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar</a></a>.</p>
+        <p class="lead" style="text-align: justify;">As máquinas devem listar os arquivos baixados quando utilizar o comando <a style="font-family: 'Courier New'; font-weight: bold ;">“ls”</a> assim como nas imagens a seguir:</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Organizar.png" alt="HTML5 Icon">
+        </p>
+
+
+      </div>
+    </main>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Criando .sh">Criando .sh</h1>
+        <p class="lead" style="text-align: justify;">Vamos começar pela máquina principal, a qual foi baixado e está listado o arquivo <a style="font-style: italic;"> “MultiPaper-Master-2.10.1-all.jar”</a> digite <a style="font-family: Courier New; font-weight: bold;">  “sudo nano start.sh”</a>, antes de abrir a tela do editor de texto <a style="font-style: italic;">“nano”</a> o sistema vai pedir a senha do superusuário caso ainda não tenha utilizado um comando com essa necessidade ainda. Agora dentro do editor de texto digite o seguinte código na imagem seguinte:</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Agora altere a permissão do arquivo de script utilizando do comando de <a style="font-family: 'Courier New'; font-weight: bold ;">“chmod”</a> e pondo o atributo <a style="font-family: 'Courier New'; font-weight: bold ;">“+x”</a>, onde “x” é a permissão de execução do arquivo e permissão para acessar pastas, não se esqueça de utilizar o "sudo" antes do comando que irá ficar como a sequência a seguir:</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: center; font-family: 'Courier New'; font-weight: bold ;">sudo chmod +x start.sh</a>
+        <p class="lead" style="text-align: justify;">Ao final do processo a máquina deve apresentar o arquivo “start.sh” com uma cor diferente igual a próxima imagem:</p>
+        <p  style="text-align: center">
+          <img src="Figura 3 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Com isso a máquina principal está pronta para execução de testes, no terminal digite <a style="font-family: 'Courier New'; font-weight: bold ;">". start.sh"</a> e aperte enter , vai aparecer a mensagem do multipaper escutando a porta selecionada que nesse caso como não foi alterada por padrão vai ficar como 35353.</p>
+        <p  style="text-align: center">
+          <img src="Figura 4 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Agora na outra máquina esta que foi nomeada diferente da primeira e que vou mencionar como sendo <a style="font-style: italic;">“server 1”</a> execute o comando para criar o arquivo de texto novamente, com o mesmo nome para facilitar compreensão com o comando <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo nano start.sh”</a> e digite um comando semelhante ao que foi feito na máquina principal, mostrado adiante está as linhas para transcrever:</p>
+        <p  style="text-align: center">
+          <img src="Figura 5 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Com a diferença que o <a style="font-style: italic;">“nogui”</a> é para que não seja executado com interface de usuário, já que estamos em um sistema que opera por linhas de texto, feito isso salve e feche o editor de texto e execute o mesmo comando para adicionar permissão ao <a style="font-style: italic;">start.sh</a>, <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo chmod +x start.sh”</a> e então execute, a máquina irá adquirir os arquivos de servidor do minecraft se conectando ao servidor de download da própria mojang e quando começar a aparecer  as linhas de tentativa de conexão a <a style="font-style: italic;">“localhost:35353”</a>, faça o comando de <a style="font-style: italic;">“ctrl + c”</a> para pausar e coloque o ip da máquina principal dentro do <a style="font-style: italic;">“multipaper.yml”</a> na linha de <a style="font-style: italic;">“master-address:”</a>, para fazer isso abra o arquivo <a style="font-style: italic;">“.yml”</a> utilizando do programa “nano” de edição de textos utilizando do comando <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo nano multipaper.yml”</a> e com o arquivo aberto altere o localhost pelo ip da máquina principal ficando semelhante a imagem seguinte:</p>
+        <p  style="text-align: center">
+          <img src="Figura 6 Criando .sh .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Inicie novamente o arquivo <a style="font-style: italic;">“start.sh”</a>, espere pelo minecraft pedir confirmação na eula, encerre o processo e abra o <a style="font-style: italic;">“eula.txt”</a> utilizando do programa <a style="font-style: italic;">“nano”</a> e altere <a style="font-style: italic;">“false”</a> para <a style="font-style: italic;">“true”</a>, salve, feche então inicie novamente o <a style="font-style: italic;">“start.sh”</a>, se tudo estiver ocorrendo normalmente o programa já vai estar funcionando e o servidor já vai estar pronto e esta é a lógica de como será usado dentro do sistema de nuvem da amazon, com alguns passos a mais para configuração.</p>
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Configurar Serviços"> Configurar Serviços</h1>
+        <p class="lead" style="text-align: justify;">Aqui vamos configurar um serviço para a máquina servidor inicializar com o arquivo “java” responsável pela ativação do servidor do jogo, esta configuração será feita apenas uma vez, já que posteriormente a imagem da máquina vai estar com a configuração fazendo o auto-scale dela ser muito mais simples. começamos utilizando <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo nano /etc/systemd/system/startup.service”</a>, onde <a style="font-style: italic;">startup</a> sendo o nome do arquivo a ser criado e que ele será reconhecido como um serviço dentro do sistema e <a style="font-style: italic;">“/etc/systemd/system”</a> o diretório dos serviços já criados, com o arquivo criado e aberto comece a digitar, começando pela descrição do serviço:</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Configurar Serviço .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Esta primeira parte define uma descrição e após qual serviço o nosso serviço irá começar a funcionar dentro da máquina, para o próximo parágrafo vamos definir o que o serviço irá fazer dentro da máquina:</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Configurar Serviço .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">A sessão define o diretório ao qual vai iniciar o serviço e que ele vai ficar repetindo tentativas até conseguir êxito como consta na linha <a style="font-style: italic;">“Restartalways”</a>, então vai executar uma screen e dentro dela utilizará do comando de iniciar com java o arquivo do multipaper de servidor por fim:</p>
+        <p  style="text-align: center">
+          <img src="Figura 3 Configurar Serviço .png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">O processo de instalação do serviço será padrão, feche e salve o arquivo e execute o comando em seguida <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo systemctl enable startup”</a>, agora a próxima vez que reiniciar a máquina ou quando executar o comando <a style="font-family: 'Courier New'; font-weight: bold ;">“sudo systemctl start startup”</a> o servidor do jogo será iniciado, por fim deve ficar como na imagem a seguir:
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 4 Configurar Serviço .png" alt="HTML5 Icon">
+        </p>
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Arquitetura">Arquitetura</h1>
+        <p class="lead" style="text-align: justify;">A arquitetura do minecraft na nuvem será construída como na figura, tudo dentro da mesma “Subnet” que se encontra dentro de uma “VPC” (Nuvem virtual privada) disponível pelo serviço da AWS, o administrador tem a duas máquinas via conexão “SSH”, estas duas máquinas a máquina que está descrita como “EC2-Mine-Principal” é a máquina responsável por iniciar a conexão entre as máquinas “Mine-Servers”</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Arquitetura.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">A máquina “EC-Mine Server” funciona como um template para ser usado pelo grupo de escalabilidade automática. Nesse grupo, caso as máquinas atualmente disponibilizadas não atendam a demanda de conexões, outras máquinas são provisionadas, de acordo com as configurações definidas para acionar o processo de escalabilidade. Enquanto isso o usuário jogador faz conexão com o jogo via o endereço de DNS do balanceador de carga que está sendo criado e que este irá enviar sua conexão para uma das máquinas dentro do grupo de máquinas, todas as máquinas dentro do mesmo grupo de segurança, permitindo a conexão do administrador, usuário e entre as máquinas para se comunicarem quando necessário.</p>
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Criar Máquinas">Criar Máquinas</h1>
+        <p class="lead" style="text-align: justify;">Ao entrar no portal da AWS a primeira página é a “Página inicial do console” que vai ter algumas informações importantes a se destacar, nessa etapa será observado os recursos de  serviços e a barra de pesquisa. O primeiro passo a ser realizado é a criação de duas máquinas que serão utilizadas como base para fazer a criação dos demais modelos usados neste trabalho, criando imagem de armazenamento e sistemas. Em “Serviços” logo à direita do ícone da “AWS” faça uma busca até encontrar o serviço de EC2 na aba que abre ao clicar nos serviços, ou faça uma busca na barra ao lado.</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Em “Serviços” logo à direita do ícone da “AWS” faça uma busca até encontrar o serviço de EC2 na aba que abre ao clicar nos serviços, ou faça uma busca na barra ao lado. O painel EC2 aberto clique em executar instância, agora nessa configuração escolha o nome para a instância, de modo que consiga identificar que é uma instância principal diferente das demais, o sistema operacional de preferência Debian, tipo de instância “T2.micro”, Par de chaves selecione em “Criar novo par de chaves” e insira um nome preferível para o par de chaves e em suas configurações deixe selecionado “RSA” e “.ppk”, em breve utilizaremos do programa PuTTY para efetuar uma conexão de “SSH”.</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 3 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 4 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 5 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 6 Criar Máquinas.png" alt="HTML5 Icon">
+        </p>
+      </div>
+    </main>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Conectar a Máquina">Conectar a Máquina</h1>
+        <p class="lead" style="text-align: justify;">O “PuTTY” é um software de emulação de terminal grátis e de código livre e ele que usaremos para fazer a conexão SSH com as máquinas, primeiro procure ele utilizando qualquer site de busca que desejar, pode utilizar do próprio Google para este exemplo, certifique que encontrou o endereço <a href="https://www.putty.org/">https://www.putty.org/</a>, faça o download do arquivo e coloque ele em algum local que possa localizar facilmente após pois será ele utilizado quando formos tentar fazer conexão dentro das máquinas na nuvem do serviço AWS.
+          <p  style="text-align: center">
+            <img src="Figura 1 Conectar a Máquina.png" alt="HTML5 Icon">
+          </p>
+        <p class="lead" style="text-align: justify;">Inicie o “PuTTY”, com ele agora aberto abra as propriedades da instância que acabou de ser criada na AWS, copie o IP público da sua instância Debian e coloque na seção “HostName (or IP address)” na janela principal do PuTTY, selecione “SSH” na seção “Connection Type”, certifique-se que a porta “22” está selecionada na área de “Port”</p>
+          <p  style="text-align: center">
+            <img src="Figura 2 Conectar a Máquina.png" alt="HTML5 Icon">
+          </p>
+        <p class="lead" style="text-align: justify;">Continue para a seção “Category” no painel esquerdo, expanda a opção “SSH” e selecione a opção “Auth”, escolha a “Private key for authentication” clicando no botão de procura “Browse” selecione a chave “.ppk” que foi feito o download a pouco tempo atrás esta é a chave correspondente a máquina aberta na AWS, Na janela à esquerda “Category”, selecione a opção “Session” escolha um nome digitando em “Saved Sessions” e clique no botão “Save” para deixar essa sessão de fácil acesso futuro, deixando já salvo o par de chaves já que o ip público das máquinas costuma mudar a cada inicialização, clique então em “Open” e o PuTTY irá abrir a janela de console da máquina AWS, digite “admin” que por padrão é o nome de usuário do sistema pressione “Enter” agora quando pedir senha apertar novamente e tudo estiver correto será possível já executar os comandos para a máquina ser configurada.
+        </p>
+        </p>
+      </div>
+    </main>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Gerenciando na nuvem">Gerenciando na nuvem</h1>
+        <p class="lead" style="text-align: justify;">Este processo será semelhante com o efetuado nas máquinas criadas localmente pelo VirtualBox. Vamos revisar agora o processo que foi feito no tópico de <a href="#Organizar máquinas">Organizar máquinas</a>, começando entre no terminal da máquina “principal” fazendo login pelo “PuTTY” assim como foi feito as instruções anteriormente, efetue o update da máquina com <a style="font-family: 'Courier New'; font-weight: bold ;">apt-get update</a> e a instalação do java com <a style="font-family: 'Courier New'; font-weight: bold ;">apt-get install openjdk-17-jdk</a> e aguarde o fim dos processos para fazer aquisição do multipaper, faça o comando de “wget” seguido do link endereço <a href="https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/MultiPaper-Master-2.10.1-all.jar">https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/MultiPaper-Master-2.10.1-all.jar</a> para adquirir o multipaper na máquina principal, inicie ele igualmente como foi feito com a máquina localmente criada, feito isso inicie a segunda máquina criada e efetue o mesmo processo só alterando o link que será usado no comando de <a style="font-family: 'Courier New'; font-weight: bold ;">wget</a> que será o enderenço adiante <a href="https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar">https://multipaper.io/api/v2/projects/multipaper/versions/1.19.2/builds/37/downloads/multipaper-1.19.2-37.jar</a>, faça a configurações previamente estabelecidas.
+          Ambas as máquinas vão estar semelhante como a figura seguinte:</p>
+          <p  style="text-align: center">
+            <img src="Figura 1 Gerenciando na nuvem.png" alt="HTML5 Icon">
+          </p>
+          <p class="lead" style="text-align: justify;">Execute o procedimento de instalação de serviço feito na máquina servidor também na máquina que tem o “multipaper-1.19.2-37-jar” que foi feito no tópico de <a href="#Organizar máquinas">Organizar máquinas</a>.</p>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Grupo de segurança">Grupo de segurança</h1>
+        <p class="lead" style="text-align: justify;">Agora esta será a sessão para criarmos as permissões para efetuar as conexões entre as máquinas, configure o arquivo <a style="font-style: italic;">multipaper.yml</a> a linha <a style="font-style: italic;">master-address:</a> logo no início do arquivo colocando o ip da rede interna da máquina principal, do mesmo jeito que foi feito anteriormente, juntamente coloque a porta na qual ele está escutando, no caso será igual a figura seguinte:
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Grupo de segurança.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Você deve ter notado que após fazer o início do processo de "start.sh" da máquina servidor ela não conseguiu estabelecer conexão com a principal mesmo depois de ter alterado o conteúdo do arquivo da “eula.txt” e inicie novamente o processo, diferentemente como foi feito anteriormente no tópico <a href="#Organizar máquinas">Organizar máquinas</a> a conexão não será estabelecida, acontece que por padrão vai manter todas as portas fechadas e que por conta do uso de “SSH” para a conexão apenas a porta “22” está aberta no momento, no painel esquerdo do serviço “EC2” selecione “security group” .</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Grupo de segurança.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Clique para configurar o “launch-wizard-1” o grupo criado automaticamente no processo de criação da primeira máquina, aperte em “editar regras de entrada” nele, para o momento precisamos abrir as portas “35353” na rede interna e “25565” que é a porta padrão do minecraft no fim deve ficar semelhante com a figura seguinte: </p>
+        <p  style="text-align: center">
+          <img src="Figura 3 Grupo de segurança.png" alt="HTML5 Icon" style="width:1020px;height:420px;" >
+        </p>
+        <p class="lead" style="text-align: justify;">Na imagem, podemos ver que as portas “25565” e “35353” em ambos os protocolos “TCP” e “UDP” estão abertas para todos os ip 's que necessitarem de acesso e no momento este é o necessário de configuração no grupo de segurança.</p>
+
+
+      </div>
+    </main>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Grupo destino load balancer">Grupo destino e load balancer</h1>
+        <p class="lead" style="text-align: justify;">Este tópico destina-se a criação de um único endereço para efetuar o acesso ao servidor de jogo utilizando do loadbalancer, independente de qual máquina servidora esteja disponível o “Load Balancer” vai fazer a sua função de enviar para a que tiver menor quantidade de tráfego de acessos naquele momento. 
+          Começando pelo menu esquerdo, mais abaixo dentro de “Balanceamento de carga” clique em “Load Balancers” vai ir à uma página e nela escolha “create load balancer” em laranja, selecione a opção que está “Network Load Balancer” e clique embaixo onde tem “create”</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Load Balancer.png" alt="HTML5 Icon" style="width:1020px;height:820px;" >
+        </p>
+        <p class="lead" style="text-align: justify;">
+        já que ele será focado para as conexões da aplicação focado em otimizar as conexões TCP/UDP, na configuração básica coloque o nome selecione o “Scheme” como “Internet-facing” e o tipo de endereço ainda “ipv4”, selecione em “Network mapping” o mesmo das máquinas criadas, no painel de instâncias você pode checar na área de “Zona de disponibilidade” neste caso ambas estão localizadas em “us-east-1b” que é a área da VPC que será colocada o nosso “Load Balancer”, em área de “Listeners and routing” clique em “Create target group”.</p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Load Balancer.png" alt="HTML5 Icon">
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 3 Load Balancer.png" alt="HTML5 Icon" style="width:700px;height:200px;" >
+        </p>
+        <p class="lead" style="text-align: justify;">Vá para a configuração de grupos de destino, mantenha instances, adicione o nome, altere o protocolo para “TCP_UDP” e sua porta para “25565”, clique em “next”, na próxima página selecione para adicionar o “load balancer” mais tarde, adicione a máquina servidora no grupo e então crie o grupo, volte para a criação do load balancer, clique no botão de atualizar a direita do espaço para seleção do grupo e adicione nele o grupo destino recém criado e então finalize com o número da porta que desejamos e foi posta anteriormente “25565” que é a porta padrão do minecraft funalize criando o “Load balancer”, isto vai ser o suficiente por enquanto fora das máquinas agora com o load balancer criado adquira o seu DNS pela interface de rede dele.</p>
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="AMI Launch template">AMI Launch template</h1>
+        <p class="lead" style="text-align: justify;">Para prosseguir com a criação das seguintes estruturas, Launch Template e Auto-Scale, faz se necessário a criação de uma imagem “AMI” nessa prática, esta AMI é em base das máquinas que foram criadas anteriormente, definindo uma AMI é uma imagem de máquina da amazon uma tradução livre de “Amazon machine image”, escrito isso, acesse a janela do console e direcione para o painel das instâncias EC2, no painel escolha qual instância EC2 pretende usar como base para a AMI e clique com o botão direito encima da máquina escolhida, na janela pop-up uma das últimas opções escolha “imagem e modelos” e então criar imagem, escolha um nome e uma descrição para futuramente ser fácil de detectar e crie a imagem, aguarde o final da criação da AMI e repita o processo para a segunda máquina. </p>
+        <p  style="text-align: center">
+          <img src="Figura 1 AMI Launch template.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">De volta a página do serviço do EC2 selecionando novamente instâncias, escolha a máquina que irá utilizar, aperte novamente com o botão direito em uma delas  escolha, imagens e modelos e criar modelo a partir de instância, configure a AMI em “Minhas AMIs” e selecione a AMI recém criada da máquina selecionada, em tipo de instância escolha uma equivalente a máquina, nesse caso T2.micro para o modelo da máquina principal e T2.small para a máquina servidora, o par de chaves escolha uma chave anteriormente criada, “Configuração de rede“ a Sub-net que seja da zona de disponibilidade “us-east-1b” o firewall que no caso é o grupo de segurança selecione o mesmo das demais máquinas o “Launch-wizard-1”, verifique tudo e crie o modelo de lançamento e repita o processo para a outra máquina.</p>
+      </div>
+    </main>
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Auto-Scale">Auto-Scale</h1>
+        <p class="lead" style="text-align: justify;">Por último tópico, a criação do grupo de auto-scale o processo pelo AWS é semelhante aos demais,  no console do serviço EC2 se dirija ao painel lateral esquerdo e procure por “Grupos Auto Scaling” a última opção do menu, ao selecionar escolha “criar um grupo do auto scaling”, coloque o nome que desejar no grupo e o modelo de execução da máquina servidor (Launch Template do tópico acima), na próxima página a VPC já virá selecionada já a zona de disponibilidade escolha a “us-east-1b” a zona que utilizamos anteriormente em outros momentos, neste momento selecione anexar um balanceador de carga já existente e selecione o grupo destino criado no tópico de <a href="#Grupo destino load balancer">Grupo destino load balancer</a></p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Auto-Scale.png" alt="HTML5 Icon">
+        </p>
+        <p class="lead" style="text-align: justify;">Em tamanho de grupo deixe a capacidade desejada como 1, capacidade mínima 1 e a capacidade máxima 2, para os primeiros testes, selecione próximo até terminar a criação do grupo de auto-scale, após criado vá selecione “escalabilidade automática” e crie uma política de escalabilidade dinâmica com o tipo de “Escalabilidade de monitoramento do objeto” e a métrica sendo a porcentagem de uso da CPU, coloque o número em 90 e um tempo de aquecimento das instâncias de 300 segundos (5 minutos) para que não seja criada instancias por acaso.
+        </p>
+        <p  style="text-align: center">
+          <img src="Figura 2 Auto-Scale.png" alt="HTML5 Icon">
+        </p>
+      </div>
+    </main>
+
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Terraform">Terraform</h1>
+        <p class="lead" style="text-align: justify;">Terraform é uma poderosa ferramenta que provisiona configuração e gerência de recursos de infraestrutura na nuvem de forma declarativa, tem o seu código aberto e nela é possível descrever como deseja sua infraestrutura usando uma linguagem de configuração simples e consistente, permitindo a implantação automatizada, escalável e repetível de recursos em provedores de nuvem, como AWS, Azure, Google Cloud, entre outros, neste caso estamos utilizando a AWS.
+          O terraform como ferramenta de implantação e gerenciamento para nuvem, tem uma flexibilidade para automatizar com consistência o código para diversas implementações, a <a href="#Arquitetura">Arquitetura</a> é o que estamos escrevendo no terraform, para facilitar de observarmos em qual parte estamos trabalhando no terraform, começando, precisamos da região, e as chaves para acesso, neste caso como este trabalho é feito por um laboratório providenciado pelo IFRN eu adquiro estas informações por meio do painel “AWS Details” como na imagem a seguir.
+        .</p>
+        <p  style="text-align: center">
+          <img src="Figura 1 Terraform.png" alt="HTML5 Icon">
+        </p>
+        <h1 id="Cabeçalho">Cabeçalho</h1>
+        <div id="list">
+          <p><iframe src="Cabeçalho.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+      </div>
+    </main>
+    
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Par de chaves">Par de chaves</h1>
+        <p class="lead" style="text-align: justify;">Crie um par de chaves pela declaração do bloco de recursos, dentro dele teremos o nome e diretório diretório da chave pública</p>
+        <p class="lead" style="text-align: justify;">Código do par de chaves:</p>
+        <div id="list">
+          <p><iframe src="Par de chaves.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Grupo de segurança2">Grupo de segurança</h1>
+        <p class="lead" style="text-align: justify;">Declare as regras que ele vai aceitar, por padrão ele recusa todas as conexões então declare as portas de entrada “35353”, “25565” e “22”, respectivamente, a porta que o multipaper utiliza para se comunicar, porta na qual o minecraft se conecta por padrão e uma porta para a conexão SSH e libere todas as portas para saída, para as máquinas dentro do grupo de segurança poder acessar todas as conexões.</p>
+        <p class="lead" style="text-align: justify;">Código do grupo de segurança:</p>
+        <div id="list">
+          <p><iframe src="Grupo de segurança.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Modelo">Modelo</h1>
+        <p class="lead" style="text-align: justify;">Dentro do bloco de recursos iremos atribuir um id para a imagem da máquina, sendo este o id da nossa AMI criada anteriormente no tópico <a href="#AMI Launch template">AMI Launch template</a> o tipo de instância “t2.small” o nome do par chaves passamos os dados como o id do deployer par de chaves, como pode perceber é a declaração do bloco de recursos visto acima, dentro do bloco iremos passar a informação de local de atrelamento na zona de disponibilidade “us-east-1b”, logo então a configuração da interface de rede, associa um ip público “True” e deletar ao finalizar o uso da máquina como “True”, o grupo de segurança é o mesmo ID encontrado após o grupo acima ser criado e a subnet por padrão já deve estar disponível para uso então basta pegar o seu id para uso e atribuir no código, por fim o comportamento da máquina ser o de se apagar ao desligar para evitar custos.
+        </p>
+        <p class="lead" style="text-align: justify;">Código do modelo de lançamento:</p>
+        <div id="list">
+          <p><iframe src="Launch template.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Target Group">Grupo destino</h1>
+        <p class="lead" style="text-align: justify;">Os bloco de grupo de destino é um bloco de recurso como os anteriores, a declaração se segue parecida, um nome, uma porta, protocolo e id da vpc</p>
+        <p class="lead" style="text-align: justify;">Código do grupo destino:</p>
+        <div id="list">
+          <p><iframe src="Target Group.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Load balancer">Balanceador de carga</h1>
+        <p class="lead" style="text-align: justify;">O próximo bloco de recursos é o do balanceador de carga, que vai estar voltado para a internet  escutando conexões pelo seu listener que será mencionado logo após para repassar para as máquinas EC2 do grupo de destino, ele é implementado semelhante aos outros blocos de recurso.
+        </p>
+        <p class="lead" style="text-align: justify;">Código do balanceador de carga:</p>
+        <div id="list">
+          <p><iframe src="Load balancer.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Listener">Ouvinte</h1>
+        <p class="lead" style="text-align: justify;">A declaração do listener ou ouvinte se segue no mesmo padrão do balanceador de carga e o grupo de destino, ele é um bloco de recursos do terraform no qual vai ser usado para definir qual porta o balanceador de carga vai estar escutando e esta porta será redirecionada a máquina com menos carga de conexões e trabalho.
+        </p>
+        <p class="lead" style="text-align: justify;">Código do ouvinte:</p>
+        <div id="list">
+          <p><iframe src="Listener.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Autoscale">Escalonamento automatico</h1>
+        <p class="lead" style="text-align: justify;">O bloco de autoscale continua com uma implementação simples semelhante aos blocos de recurso anteriores, ele vai se utilizar de coisas que já foram vistas anteriormente na declaração.</p>
+        <p class="lead" style="text-align: justify;">Código do escalonamento automatico:</p>
+        <div id="list">
+          <p><iframe src="auto scale.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    <main role="main" class="container">
+      <div class="jumbotron">
+        <h1 id="Código completo">Código completo</h1>
+        <p class="lead" style="text-align: justify;">Código de provisão de arquitetura completo:</p>
+        <div id="list">
+          <p><iframe src="main.tf" frameborder="0" height="400"
+              width="95%"></iframe></p>
+        </div>
+
+      </div>
+    </main>
+
+    
+
+
+    
+
+
+    <!-- Principal JavaScript do Bootstrap
+    ================================================== -->
+    <!-- Foi colocado no final para a página carregar mais rápido -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+
+</body></html>
